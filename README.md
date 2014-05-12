@@ -1,5 +1,5 @@
 What is this?
-============
+------------
 
 The most simple way to listen to music for people who:
 
@@ -9,7 +9,7 @@ The most simple way to listen to music for people who:
 
 
 Usage
-=================
+-----
 
 `albumplayer` searches all files in your system with a query to `locate`, finds a directory with its path contining all words from query, and starts `mplayer` with all songs from the selected album queued.
 
@@ -29,6 +29,6 @@ To unpause, run the same command again
 
 
 Installation
-===========
+------------
 
 - Copy `albumplayer` somewhere in your `$PATH`, rename it if you want
