@@ -1,17 +1,19 @@
 What is this?
 ------------
 
-The most simple way to listen to music for people who:
+The most convenient way to listen to music if you:
 
-- Listen to whole albums instead of single compisotions or custom playlists
-- Have their audio collection nicely arranged so paths to compositions contain at least album name, or even better — performer's name, year and so on.
+- Listen to whole albums instead of single compositions or custom playlists
+- Have your audio collection nicely arranged so paths to compositions contain at least album name, or even better — performer's name, year and so on.
 - Prefer typing to clicking
 
 
 Usage
 -----
 
-`albumplayer` searches all files in your system with a query to `locate`, finds a directory with its path contining all words from query, and starts `mplayer` with all songs from the selected album queued.
+- `albumplayer` searches all files in your system with a query to `locate`
+- finds a directory with its path containing all words from a query
+- and starts `mplayer` with all songs from the selected album queued.
 
 For example, 
 
@@ -19,7 +21,7 @@ For example,
 
 would start playing King Crimson's album "In The Court Of The Crimson King" (of course, only if you have a directory with such name in your system).
 	
-Queries may include anything that is related to an album an is in path to its directory: year, band name, parent directory etc. Order of words is not important:
+Queries may include anything that is related to an album and is in path to its directory: year, band name, parent directory etc. Order of words is not important:
 
 	albumplayer red crimson 1974 king
 
@@ -31,7 +33,7 @@ To pause an already running player, run
 
 To unpause, run the same command again
 
-To type a query in a GUI dialog instead of CLI arguments (so it's convenient to bind in to a system-wide key combination), run 
+To type a query in a GUI dialog instead of CLI arguments (so it's convenient to bind it to a system-wide key combination), run 
 	
 	albumplayer 
 
@@ -42,3 +44,9 @@ Installation
 ------------
 
 - Copy `albumplayer` somewhere in your `$PATH`, rename it if you want
+
+Known bugs
+==========
+
+Doesn't find audiofiles in directories that are symlinks (symlinking audiofiles themselves works fine).
+

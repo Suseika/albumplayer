@@ -1,6 +1,6 @@
 #!/bin/bash
 PIPEFILE=~/.musicpipe # A named pipe to communicate with mplayer in slave mode
-if [ "$1" == "--pause"  ] && [ "$#" == "1" ];
+if [ "$1" == "--pause" ] && [ "$#" == "1" ];
 then
 	# When ran with a single --pause argument, pause currently running player
 	echo pause > $PIPEFILE &
@@ -10,13 +10,13 @@ then
 	QUERY="$@" # All arguments
 else
 	QUERY=`zenity --entry` # When ran with arguments other than a single "pause", read query from 
+	set -- $QUERY
 fi
-if ["$QUERY" == "" ];
+if [ "$QUERY" == "" ];
 then
 	exit
 fi
-set -- $QUERY
-killall mplayer # terminate previously running mplayers
+killall mplayer --quiet # terminate previously running mplayers
 
 locate -i $QUERY \
 	| grep -i "$1" \
@@ -28,8 +28,8 @@ locate -i $QUERY \
 	| grep -i "$7" \
 	| grep -i "$8" \
 	| grep -i "$9" \
-	| grep -Ei "(flac|ape|mp3|wav)$" \
-	| pee 'xargs  -I{} basename -a "{}" | naughtify>/dev/null' cat \
+	| grep -Ei "(flac|ape|mp3|wav|wv)$" \
+	| pee 'xargs -d"\n" -I{} basename -a "{}" | naughtify>/dev/null' cat \
 	| sed 's/^/loadfile "/' \
 	| sed 's/$/" 1/' \
 	| mplayer --idle -slave -input file=$PIPEFILE
