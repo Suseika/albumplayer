@@ -19,7 +19,11 @@ For example,
 
 would start playing King Crimson's album "In The Court Of The Crimson King" (of course, only if you have a directory with such name in your system).
 	
-Queries may include anything that is related to an album an is in path to its directory: year, band name, parent directory etc.
+Queries may include anything that is related to an album an is in path to its directory: year, band name, parent directory etc. Order of words is not important:
+
+	albumplayer red crimson 1974 king
+
+would still start King Crimson's 1974 album "Red". located at `/home/me/Music/King Crimson/1974 - Red`
 
 To pause an already running player, run 
 
