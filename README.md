@@ -3,7 +3,7 @@ What is this?
 
 The most simple way to listen to music for people who:
 
-- Listen to whole albums instead of single compisitions or custom playlists
+- Listen to whole albums instead of single compisotions or custom playlists
 - Have their audio collection nicely arranged so paths to compositions contain at least album name, or even better — performer's name, year and so on.
 - Prefer typing to clicking
 
