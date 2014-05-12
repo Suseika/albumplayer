@@ -1,6 +1,6 @@
 #!/bin/bash
 PIPEFILE=~/.musicpipe # A named pipe to communicate with mplayer in slave mode
-if [ "$1" == "--pause"  ] && [ "$#" == "1"];
+if [ "$1" == "--pause"  ] && [ "$#" == "1" ];
 then
 	# When ran with a single --pause argument, pause currently running player
 	echo pause > $PIPEFILE &

@@ -23,7 +23,7 @@ Queries may include anything that is related to an album an is in path to its di
 
 To pause an already running player, run 
 
-	albumplayer pause
+	albumplayer --pause
 
 To unpause, run the same command again
 
