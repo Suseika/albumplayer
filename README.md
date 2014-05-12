@@ -27,7 +27,7 @@ To pause an already running player, run
 
 To unpause, run the same command again
 
-To type a query in a GUI dialog instead of CLI arguments (do it's convenient to bind in to a system-wide key combination), run 
+To type a query in a GUI dialog instead of CLI arguments (so it's convenient to bind in to a system-wide key combination), run 
 	
 	albumplayer 
 
