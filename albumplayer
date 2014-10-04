@@ -1,4 +1,5 @@
 #!/bin/bash
+MUSIC_FOLDER="/home/suseika/Music"
 PIPEFILE=~/.musicpipe # A named pipe to communicate with mplayer in slave mode
 if [ "$1" == "--pause" ] && [ "$#" == "1" ];
 then
@@ -9,7 +10,7 @@ elif [ "$1" != "" ];
 then
 	QUERY="$@" # All arguments
 else
-	QUERY=`zenity --entry` # When ran with arguments other than a single "pause", read query from 
+	QUERY=`zenity --entry` # When run with arguments other than a single "pause", read query from 
 	set -- $QUERY
 fi
 if [ "$QUERY" == "" ];
@@ -29,6 +30,7 @@ locate -i $QUERY \
 	| grep -i "$8" \
 	| grep -i "$9" \
 	| grep -Ei "(flac|ape|mp3|wav|wv)$" \
+	| grep "$MUSIC_FOLDER" \
 	| pee 'xargs -d"\n" -I{} basename -a "{}" | naughtify>/dev/null' cat \
 	| sed 's/^/loadfile "/' \
 	| sed 's/$/" 1/' \
