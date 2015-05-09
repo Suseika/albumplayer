@@ -29,7 +29,7 @@ locate -i $QUERY \
 	| grep -i "$7" \
 	| grep -i "$8" \
 	| grep -i "$9" \
-	| grep -Ei "(flac|ape|mp3|wav|wv)$" \
+	| grep -Ei "(flac|ape|mp3|wav|wv|m4a)$" \
 	| grep "$MUSIC_FOLDER" \
 	| pee 'xargs -d"\n" -I{} basename -a "{}" | naughtify>/dev/null' cat \
 	| sed 's/^/loadfile "/' \
